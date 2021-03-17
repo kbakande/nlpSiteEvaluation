@@ -3,6 +3,8 @@ dotenv.config();
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const https = require('follow-redirects').https;
+const fs = require('fs');
 
 const app = express()
 
@@ -21,4 +23,8 @@ app.listen(8081, function () {
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
+})
+
+app.get('getSetiment', (req, res) => {
+
 })
