@@ -2,15 +2,29 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+    let inputURL = document.getElementById('name').value;
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-        .then(res => res.json())
-        .then(function (res) {
-            document.getElementById('results').innerHTML = res.message
-        })
-}
+    if (Client.isValidUrl(inputURL)) {
+        console.log("::: Form Submitted :::");
+        getSentiment(inputURL);
+    }
 
-export { handleSubmit }
+    const getSentiment = async inputURL => {
+        const dataPromise = await fetch('http://localhost:8081/getSentiment', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(inputURL)
+        });
+
+        try {
+            const sentiment = await dataPromise.json()
+            console.log(sentiment)
+        } catch (err) {
+            console.log(`error: ${err}`);
+        }
+    }
+
+
+    export { handleSubmit }
