@@ -1,6 +1,6 @@
-function isvalidUrl(inputURL) {
+function isValidUrl(inputURL) {
     console.log("::: Running checkForURL :::", inputURL);
-    const validURL;
+    let validURL;
 
     try {
         validURL = new URL(inputURL);
@@ -8,7 +8,7 @@ function isvalidUrl(inputURL) {
         return false;
     }
 
-    return url.protocol === "http:" || url.protocol === "https:";
+    return validURL.protocol === "http:" || validURL.protocol === "https:";
 }
 
 export { isValidUrl }

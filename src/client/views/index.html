@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Test</title>
 </head>
 
@@ -20,8 +21,8 @@
     <main>
         <section>
             <form class="" onsubmit="return handleSubmit(event)">
-                <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                <label></label><input id="name" type="text" name="input" value="" placeholder="Name">
+                <input type="submit" name="" value="Get the sentiment" onclick="return Client.handleSubmit(event)"
                     onsubmit="return handleSubmit(event)">
             </form>
         </section>
@@ -32,8 +33,14 @@
         </section>
     </main>
 
-    <footer>
-        <p>This is a footer</p>
+    <footer class="page__footer footer">
+        <!-- <p>&copy Nxchange</p> -->
+        &copy; Nxchange 2021
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+        </div>
     </footer>
 
 </body>
