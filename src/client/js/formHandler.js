@@ -4,6 +4,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     const inputURL = document.getElementById('name').value;
     const resultDiv = document.getElementById('results');
+    const strongMsg = document.getElementById("strong");
     const resultKeys = ['model', 'score_tag', 'agreement', 'subjectivity', 'confidence', 'irony'];
 
 
@@ -19,6 +20,7 @@ function handleSubmit(event) {
             docFrag.appendChild(keyPar);
         });
         resultDiv.innerText = "";
+        strongMsg.innerText = `The sentiment analysis is presented with ${sentiment["confidence"]}% confidence:`
         resultDiv.appendChild(docFrag);
     };
 
@@ -33,7 +35,6 @@ function handleSubmit(event) {
 
         try {
             const sentiment = await dataPromise.json()
-            // console.log(sentiment)
             displaySentiment(sentiment);
         } catch (err) {
             console.log(`error: ${err}`);
@@ -42,6 +43,7 @@ function handleSubmit(event) {
 
     if (Client.isValidUrl(inputURL)) {
         // console.log("::: Form Submitted :::");
+        strongMsg.innerText = `Retrieving sentiment analysis for: ${inputURL} ...`
         getSentiment(inputURL);
     } else {
         alert("Invalid URL: Enter valid URL to proceed ...")
