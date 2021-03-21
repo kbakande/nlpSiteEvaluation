@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: bisque;
+    font-size: 1.5em
 }
 
 main {
@@ -12,4 +13,14 @@ main {
 section {
     max-width: 800px;
     margin: 50px auto;
+    text-align: center;
+}
+
+#results {
+    text-align: left;
+    // border: rgb(202, 31, 31) solid 2px;
+}
+
+strong {
+    text-align: left;
 }
