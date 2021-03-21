@@ -11,7 +11,7 @@ module.exports = {
     entry: "./src/client/index.js",
     devServer: {
         writeToDisk: true
-        },
+    },
     output: {
         clean: true, // Clean the output directory before emit.
         libraryTarget: 'var',
@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
