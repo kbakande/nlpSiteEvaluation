@@ -10,7 +10,8 @@ module.exports = {
     devtool: "source-map",
     entry: "./src/client/index.js",
     devServer: {
-        writeToDisk: true
+        writeToDisk: true,
+        injectClient: false
     },
     output: {
         clean: true, // Clean the output directory before emit.
