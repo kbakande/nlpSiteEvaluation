@@ -1,5 +1,40 @@
 header {
+    height: 5vh;
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    background-image:linear-gradient(to right, blue, red);
+}
+
+img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    justify-content:center;
+    width: 180px;
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-flow: row;
+}
+
+li {
+    display: inline;
+    margin: 10px;
+}
+
+li:hover {
+    background-color: rgb(160, 152, 152);
+}
+
+h1 {
+   margin-bottom: 50px;
 }
